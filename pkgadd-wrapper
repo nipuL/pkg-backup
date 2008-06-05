@@ -1,0 +1,30 @@
+#!/bin/bash
+ARGS=$@
+while [ "$1" ]; do
+    case "$1" in
+	-r|--root)
+	    if [ ! "$2" ]; then
+		echo "pkgadd-wrapper: option $1 requires an argument"
+		exit 1
+	    fi
+	    ROOT="$2"
+	    shift ;;
+	-u|--upgrade)
+	    UPGRADE="true" ;;
+	-*)
+	    ;;
+	*)
+	    PACKAGE="$1"
+    esac
+    shift
+done
+
+if [ "$UPGRADE" = "true" ]; then
+    PACKAGE="`basename $PACKAGE | sed 's/#.*//'`"
+    if [ "$ROOT" ]; then
+	./prt-backup -r "$ROOT" "$PACKAGE"
+    else
+	./prt-backup "$PACKAGE"
+    fi
+fi
+pkgadd $ARGS
