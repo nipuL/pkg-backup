@@ -3,3 +3,6 @@ drwxr-xr-x	root/root	usr/bin/
 -rwxr-xr-x	root/root	usr/bin/pkg-backup
 -rwxr-xr-x	root/root	usr/bin/pkgadd-wrapper
 -rwxr-xr-x	root/root	usr/bin/pkgrm-wrapper
+drwxr-xr-x	root/root	var/
+drwxr-xr-x	root/root	var/cache/
+drwxr-xr-x	root/root	var/cache/pkg-backup/
