@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 ARGS=$@
 while [ "$1" ]; do
     case $1 in
