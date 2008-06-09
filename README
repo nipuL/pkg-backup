@@ -1,1 +1,6 @@
 prt-backup is a utlity for backing up installed packages.
+
+To enable automatic backups simply make the following changes to prt-get.conf
+
+addcommand pkgadd-wrapper
+removecommand pkgrm-wrapper
