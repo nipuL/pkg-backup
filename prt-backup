@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 check_installed() {
     prt-get isinst "$1"
@@ -28,12 +28,12 @@ main() {
 		ROOT="$2"
 		shift ;;
 	    *)
-		PORTS=(${PORTS[@]} $1) ;;
+		PORTS="$1 $PORTS" ;;
 	esac
 	shift
     done
 
-    for port in ${PORTS[@]}
+    for port in $PORTS
     do
 	check_installed "$port" && backup_port "$port"
     done
