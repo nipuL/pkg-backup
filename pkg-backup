@@ -33,5 +33,5 @@ main() {
 }
 
 ROOT="/"
-PKG_BACKUP_DIR="backups/"
+PKG_BACKUP_DIR="/var/cache/pkg-backup"
 main $@

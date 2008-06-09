@@ -13,4 +13,5 @@ build() {
 	install -o root -g root -m 0755 \
 	    $f $PKG/usr/bin/$f
     done
+    install -d $PKG/var/cache/pkg-backup
 }
