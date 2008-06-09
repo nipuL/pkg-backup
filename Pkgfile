@@ -1,0 +1,16 @@
+# Description: Make backups of installed packages
+# URL: http://git.die.net.au/crux/tools/pkg-backup
+# Maintainer: Lucas Hazel, lucas at die dot net dot au
+
+name=pkg-backup
+version=0.0a
+release=1
+source=(pkg-backup pkgadd-wrapper pkgrm-wrapper)
+
+build() {
+    install -d $PKG/usr/bin
+    for f in ${source[*]}; do
+	install -o root -g root -m 0755 \
+	    $f $PKG/usr/bin/$f
+    done
+}
