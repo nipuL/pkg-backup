@@ -8,7 +8,6 @@ backup_port() {
     version="`prt-get current $1`"
     tar zcf "$PRT_BACKUP_DIR/$1#$version.pkg.tar.gz" \
 	-C $ROOT `pkginfo -l $1 | sed '/.*\/$/d'`
-    echo "backed up $1"
 }
     
 main() {
