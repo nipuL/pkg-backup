@@ -16,8 +16,8 @@ while [ "$1" ]; do
 done
 
 if [ "$ROOT" ]; then
-    ./prt-backup -r "$ROOT" "$PACKAGE"
+    prt-backup -r "$ROOT" "$PACKAGE"
 else
-    ./prt-backup "$PACKAGE"
+    prt-backup "$PACKAGE"
 fi
 pkgrm $ARGS

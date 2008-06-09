@@ -22,9 +22,9 @@ done
 if [ "$UPGRADE" = "true" ]; then
     PACKAGE="`basename $PACKAGE | sed 's/#.*//'`"
     if [ "$ROOT" ]; then
-	./prt-backup -r "$ROOT" "$PACKAGE"
+	prt-backup -r "$ROOT" "$PACKAGE"
     else
-	./prt-backup "$PACKAGE"
+	prt-backup "$PACKAGE"
     fi
 fi
 pkgadd $ARGS
