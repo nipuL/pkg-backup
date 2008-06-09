@@ -6,7 +6,7 @@ check_installed() {
 
 backup_port() {
     version="`prt-get current $1`"
-    tar zcf "$PRT_BACKUP_DIR/$1#$version.pkg.tar.gz" \
+    tar zcf "$PKG_BACKUP_DIR/$1#$version.pkg.tar.gz" \
 	-C $ROOT `pkginfo -l $1 | sed '/.*\/$/d'`
 }
     
@@ -15,7 +15,7 @@ main() {
 	case $1 in
 	    -r|--root)
 		if [ ! "$2" ]; then
-		    echo "prt-backup: option $1 requires an argument"
+		    echo "pkg-backup: option $1 requires an argument"
 		    exit 1
 		fi
 		ROOT="$2"
@@ -33,5 +33,5 @@ main() {
 }
 
 ROOT="/"
-PRT_BACKUP_DIR="backups/"
+PKG_BACKUP_DIR="backups/"
 main $@
