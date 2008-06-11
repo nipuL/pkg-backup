@@ -14,7 +14,7 @@ while [ "$1" ]; do
 	-*)
 	    ;;
 	*)
-	    PACKAGE="$1"
+	    PACKAGE="$1" ;;
     esac
     shift
 done
